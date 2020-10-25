@@ -1,0 +1,36 @@
+<{*
+	You can use the following variables for displaying the urls and titles one by one:
+	$block.urls_array
+	$block.titles_array
+*}>
+<script type="text/javascript" language="Javascript">
+<!--
+	var urls = new Array(<{$block.urls}>);
+	var titles = new Array(<{$block.titles}>);
+	var count = <{$block.count}>;
+	var timer = <{$block.timer}>;
+	var i = 0;
+//-->
+</script>
+<div id="randomnews">
+<script type="text/javascript">
+<!--
+function getArticle(){
+	if( i > count ){
+		i = 0;
+	}
+	xoopsGetElementById("randomnews").innerHTML = '<a href="' + urls[i] + '">' + titles[i] + '</a>';
+	i = i + 1;
+}
+if( !document.all && !document.getElementById ){
+	getArticle();
+}
+function showText(){
+	if( document.all || document.getElementById ){
+		setInterval("getArticle()", timer);
+	}
+}
+window.onload = showText
+//-->
+</script>
+</div>

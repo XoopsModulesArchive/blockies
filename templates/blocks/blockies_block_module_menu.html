@@ -1,0 +1,16 @@
+<{*
+	Variables that you can also use:
+	Name of the current that you are browsing:
+		$block.mod_name
+		(e.g. News)
+	Name and URL to the home page of current module:
+		$block.main_name
+		$block.main_link
+		Example:
+		<a href="$block.mod_main.url">$block.mod_main.name</a>
+*}>
+<ul>
+<{foreach item=submenu from=$block.mod_sub}>
+<li><a href="<{$submenu.url}>"><{$submenu.name}></a></li>
+<{/foreach}>
+</ul>

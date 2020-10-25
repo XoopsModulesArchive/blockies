@@ -1,0 +1,61 @@
+<{* This file is orginal from the XOOPS Project(http://xoops.codigolivre.org.br/) *}>
+<{if $block.type != "user" }>
+	<table cellspacing='1'>
+	<form action="<{$xoops_url}>/modules/blockies/include/login.php" method="post">
+	<tr><td class='even'>
+		<{$block.lang_username}>
+	</td>
+	<td class='even'>
+		<input type="text" name="uname" size="12" value="<{$block.unamevalue}>">
+	</td></tr>
+	<tr><td class='even'>
+		<{$block.lang_password}>
+	</td>
+	<td class='even'>
+		<input type="password" name="pass" size="12">
+	</td></tr>
+	<tr><td class='even'>
+		<input type="hidden" name="op" value="login">
+		<input type="hidden" name="scriptname" value="<{$block.scriptname}>">
+		<input type="hidden" name="querystring" value="<{$block.querystring}>">
+	</td>
+	<td class='even'>
+		<input type="submit" value="<{$block.lang_login}>">
+	</td></tr>
+	</form>
+	<tr><td class='even' colspan='2'><ul>
+		<li><a href="<{$xoops_url}>/user.php#lost"><{$block.lang_lostpass}></a></li>
+		<li><a href="<{$xoops_url}>/register.php"><{$block.lang_registernow}></a></li>
+	</ul></td></tr>
+	</table>
+<{else}>
+	<table cellspacing="0">
+	<tr>
+	<td align='center' valign='middle'><a href="<{$xoops_url}>/user.php">
+	<{if $block.avatar == "blank.gif" || $block.avatar == "" }>
+	<img src='<{$xoops_url}>/modules/blockies/images/user.png' width='32' height='32' alt='<{$block.avatar_title}>' title='<{$block.avatar_title}>'></a>
+	<{else}>
+		<{if $block.avatar_width != 0 }>
+		<img src='<{$xoops_url}>/uploads/<{$block.avatar}>' width='<{$block.avatar_width}>' alt='<{$block.avatar_title}>' title='<{$block.avatar_title}>'></a>
+		<{else}>
+		<img src='<{$xoops_url}>/uploads/<{$block.avatar}>' alt='<{$block.avatar_title}>' title='<{$block.avatar_title}>'></a>
+		<{/if}>
+	<{/if}>
+	</td>
+	<td>
+	<ul>
+	<li><a href="<{$xoops_url}>/user.php"><{$block.lang_youraccount}></a></li>
+	<li><a href="<{$xoops_url}>/user.php?op=logout"><{$block.lang_logout}></a></li>
+	<{if $block.new_messages > 0}>
+	<li><a href="<{$xoops_url}>/viewpmsg.php"><{$block.lang_inbox}></a> (<span style="color:#ff0000; font-weight: bold;"><{$block.new_messages}></span>)</li>
+	<{else}>
+	<li><a href="<{$xoops_url}>/viewpmsg.php"><{$block.lang_inbox}></a></li>
+	<{/if}>
+	<{if $xoops_isadmin}>
+	<li><a href="<{$xoops_url}>/admin.php"><{$block.lang_adminmenu}></a></li>
+	<{/if}>
+	</ul>
+	</td>
+	</tr>
+	</table>
+<{/if}>

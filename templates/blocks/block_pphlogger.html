@@ -1,0 +1,10 @@
+<{$block.script}>
+<ul>
+<{$block.link_main}>
+<{foreach item=counter from=$block.counters}>
+<li><{$counter}></li>
+<{/foreach}>
+</ul>
+<{if $block.logo != "" }>
+<div align='center'><{$block.logo}></div>
+<{/if}>

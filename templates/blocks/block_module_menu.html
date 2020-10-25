@@ -1,0 +1,8 @@
+<{if $block.mod_name != "" }>
+<div class="blockTitle" style="margin: 0px;"><{$block.mod_name}></div>
+<{/if}>
+<ul>
+<{foreach item=submenu from=$block.submenu}>
+<li><{$submenu}></li>
+<{/foreach}>
+</ul>

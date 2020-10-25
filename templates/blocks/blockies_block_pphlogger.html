@@ -1,0 +1,15 @@
+<{$block.script}>
+<{if $block.counters !== false}>
+	<ul>
+	<{foreach item=c from=$block.counters}>
+		<li><{$c.title}>
+		<{if $block.pph_type == 'js'}>
+		<script type="text/javascript" src="<{$block.showhits_url}>?st=js&amp;id=<{$block.pph_id}>&amp;type=<{$c.type}>"></script>
+		<{elseif $block.pph_type == 'img'}>
+		<img alt="" src="<{$block.showhits_url}>?st=img&amp;id=<{$block.pph_id}>&amp;type=<{$c.type}>">
+		<{/if}>
+		</li>
+	<{/foreach}>
+	</ul>
+<{/if}>
+
